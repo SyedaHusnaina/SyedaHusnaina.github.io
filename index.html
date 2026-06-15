@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syeda Husnaina — Senior SQA Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06080F;
+  --bg2:#090C16;
+  --bg3:#0C1020;
+  --surface:#0F1425;
+  --surface2:#131829;
+  --surface3:#17203A;
+  --b1:rgba(139,92,246,0.12);
+  --b2:rgba(139,92,246,0.22);
+  --b3:rgba(139,92,246,0.35);
+  --purple:#A78BFA;
+  --purple2:#C4B5FD;
+  --purple3:#7C3AED;
+  --pink:#F472B6;
+  --pink2:#FBCFE8;
+  --gold:#FCD34D;
+  --gold2:#FDE68A;
+  --slate:#6B7280;
+  --slate2:#9CA3AF;
+  --slate3:#D1D5DB;
+  --white:#F9FAFB;
+  --grad:linear-gradient(135deg,#A78BFA 0%,#F472B6 50%,#FCD34D 100%);
+  --grad2:linear-gradient(135deg,#7C3AED 0%,#DB2777 100%);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--slate3);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--purple3);border-radius:3px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 3.5rem;transition:all 0.4s}
+nav.scrolled{background:rgba(6,8,15,0.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--b1)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{width:34px;height:34px;border-radius:9px;background:var(--grad2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:#fff;letter-spacing:-0.02em}
+.nav-name{font-size:14px;font-weight:600;color:var(--white);letter-spacing:-0.01em}
+.nav-name span{color:var(--purple)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{font-size:13px;color:var(--slate2);text-decoration:none;padding:7px 16px;border-radius:8px;font-weight:500;transition:all 0.2s;letter-spacing:0.01em}
+.nav-links a:hover{color:var(--white);background:var(--b1)}
+.nav-cta{background:var(--grad2) !important;color:#fff !important;font-weight:600 !important;margin-left:6px;padding:7px 20px !important}
+.nav-cta:hover{opacity:0.9;transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:7rem 3.5rem 5rem;position:relative;overflow:hidden}
+.hero-noise{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;opacity:0.4}
+.hero-orb1{position:absolute;top:-15%;right:-5%;width:700px;height:700px;background:radial-gradient(circle,rgba(124,58,237,0.18) 0%,transparent 65%);pointer-events:none}
+.hero-orb2{position:absolute;bottom:-20%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(244,114,182,0.1) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center;position:relative;z-index:1}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:2rem;padding:6px 16px 6px 8px;background:var(--b1);border:1px solid var(--b2);border-radius:40px}
+.hero-pill-dot{width:28px;height:28px;border-radius:50%;background:var(--grad2);display:flex;align-items:center;justify-content:center}
+.hero-pill-dot i{font-size:13px;color:#fff}
+.hero-pill span{font-size:12px;font-weight:500;color:var(--purple2);letter-spacing:0.04em}
+h1.hero-name{font-size:4.2rem;font-weight:700;line-height:1.0;letter-spacing:-0.03em;margin-bottom:0.3rem}
+h1.hero-name .first{color:var(--white)}
+h1.hero-name .last{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.hero-role{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--slate2);margin-bottom:1.5rem;letter-spacing:0.04em;display:flex;align-items:center;gap:8px}
+.hero-role::before{content:'';width:28px;height:1px;background:var(--purple)}
+.hero-tagline{font-size:17px;color:var(--slate2);max-width:500px;line-height:1.85;margin-bottom:2.5rem;font-weight:300;font-style:italic;border-left:2px solid var(--purple3);padding-left:1.25rem}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-grad{display:inline-flex;align-items:center;gap:9px;background:var(--grad2);color:#fff;padding:13px 28px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.01em;transition:all 0.25s;box-shadow:0 4px 24px rgba(124,58,237,0.35)}
+.btn-grad:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,0.5)}
+.btn-outline{display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--slate3);padding:13px 28px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:all 0.25s}
+.btn-outline:hover{border-color:var(--b2);color:var(--white);background:var(--b1);transform:translateY(-1px)}
+
+/* Hero card */
+.hcard{background:var(--surface);border:1px solid var(--b2);border-radius:20px;padding:0;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5)}
+.hcard-top{padding:1.5rem 1.75rem;background:linear-gradient(135deg,var(--surface2),var(--surface));border-bottom:1px solid var(--b1)}
+.hcard-top-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--slate);margin-bottom:6px}
+.hcard-avatar{display:flex;align-items:center;gap:12px}
+.hcard-initials{width:44px;height:44px;border-radius:12px;background:var(--grad2);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
+.hcard-name{font-size:15px;font-weight:600;color:var(--white)}
+.hcard-sub{font-size:12px;color:var(--purple);margin-top:2px}
+.hcard-body{padding:1.25rem 1.75rem}
+.hcard-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--b1)}
+.hcard-row:last-child{border-bottom:none}
+.hcard-key{font-size:12px;color:var(--slate2);display:flex;align-items:center;gap:8px}
+.hcard-key i{font-size:14px;color:var(--purple);opacity:0.7}
+.hcard-val{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--purple2);font-weight:500}
+.hcard-footer{padding:1.25rem 1.75rem;border-top:1px solid var(--b1);background:var(--bg3)}
+.avail-row{display:flex;align-items:center;gap:10px}
+.avail-pulse{width:8px;height:8px;border-radius:50%;background:#34D399;flex-shrink:0;box-shadow:0 0 0 0 rgba(52,211,153,0.4);animation:ping 1.5s ease-in-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(52,211,153,0.5)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.avail-text{font-size:12px;color:#34D399;font-weight:500}
+.avail-badge-sm{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;color:#34D399;background:rgba(52,211,153,0.1);padding:3px 10px;border-radius:20px;border:1px solid rgba(52,211,153,0.25)}
+
+/* ── METRICS ── */
+.metrics-wrap{border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);background:var(--bg2)}
+.metrics-inner{max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap}
+.metric{flex:1;min-width:140px;padding:2rem 2.5rem;border-right:1px solid var(--b1);text-align:center;position:relative;overflow:hidden}
+.metric:last-child{border-right:none}
+.metric::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:40%;height:1px;background:var(--grad)}
+.metric-num{display:block;font-size:2.4rem;font-weight:700;letter-spacing:-0.03em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.metric-lbl{display:block;font-size:11px;color:var(--slate);letter-spacing:0.08em;margin-top:6px;font-weight:500}
+
+/* ── SECTION SCAFFOLD ── */
+.sec{padding:5.5rem 3.5rem;max-width:1160px;margin:0 auto}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--b2),transparent)}
+.sec-hd{display:flex;align-items:center;gap:14px;margin-bottom:3rem}
+.sec-num{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:0.1em;font-weight:500;padding:3px 0}
+.sec-hd h2{font-size:1.9rem;font-weight:700;color:var(--white);letter-spacing:-0.02em}
+.sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--b2),transparent)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b2);border-radius:16px;border:1px solid var(--b2);overflow:hidden}
+.about-cell{background:var(--surface);padding:2rem 2.25rem;transition:background 0.2s}
+.about-cell:hover{background:var(--surface2)}
+.about-cell-icon{width:36px;height:36px;border-radius:9px;background:var(--b1);border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.about-cell-icon i{font-size:17px;color:var(--purple)}
+.about-cell h3{font-size:12px;font-weight:600;letter-spacing:0.08em;color:var(--purple2);margin-bottom:8px;text-transform:uppercase}
+.about-cell p{font-size:13.5px;color:var(--slate2);line-height:1.85;font-weight:300}
+
+/* ── EXPERIENCE ── */
+.exp-wrap{display:grid;grid-template-columns:220px 1fr;gap:0;background:var(--b1);border:1px solid var(--b2);border-radius:16px;overflow:hidden}
+.exp-sidebar{border-right:1px solid var(--b1)}
+.exp-tab{padding:1.25rem 1.5rem;cursor:pointer;border-left:2px solid transparent;transition:all 0.2s;position:relative}
+.exp-tab:not(:last-child){border-bottom:1px solid var(--b1)}
+.exp-tab:hover{background:var(--b1)}
+.exp-tab.active{border-left-color:var(--purple);background:linear-gradient(90deg,rgba(139,92,246,0.1),transparent)}
+.exp-tab-co{font-size:13px;font-weight:600;color:var(--slate3);margin-bottom:3px;transition:color 0.2s}
+.exp-tab.active .exp-tab-co{color:var(--purple2)}
+.exp-tab-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--slate);letter-spacing:0.04em}
+.exp-main{padding:2.5rem;background:var(--surface)}
+.exp-panel{display:none}
+.exp-panel.active{display:block}
+.exp-role-title{font-size:1.25rem;font-weight:700;color:var(--white);margin-bottom:4px;letter-spacing:-0.01em}
+.exp-co-tag{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple2);background:var(--b1);border:1px solid var(--b2);padding:3px 12px;border-radius:20px;margin-bottom:1.25rem}
+.exp-desc{font-size:14px;color:var(--slate2);line-height:1.85;margin-bottom:1.75rem;font-weight:300;max-width:600px}
+.achieve-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ach{display:flex;align-items:flex-start;gap:10px;background:var(--bg3);border:1px solid var(--b1);border-radius:10px;padding:11px 14px;transition:border-color 0.2s}
+.ach:hover{border-color:var(--b2)}
+.ach-icon{width:28px;height:28px;border-radius:7px;background:var(--b1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ach-icon i{font-size:14px;color:var(--purple)}
+.ach span{font-size:12.5px;color:var(--slate3);line-height:1.45;padding-top:2px}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b2);border:1px solid var(--b2);border-radius:16px;overflow:hidden}
+.sk{background:var(--surface);padding:1.75rem;transition:background 0.2s}
+.sk:hover{background:var(--surface2)}
+.sk-head{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.sk-ico{width:36px;height:36px;border-radius:9px;background:var(--b1);border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sk-ico i{font-size:17px;color:var(--purple)}
+.sk h3{font-size:13px;font-weight:600;color:var(--white)}
+.sk-tags{display:flex;flex-wrap:wrap;gap:6px}
+.s-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:5px;background:var(--bg3);color:var(--slate2);border:1px solid var(--b1)}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.proj{background:var(--surface);border:1px solid var(--b2);border-radius:14px;padding:1.75rem 2rem;position:relative;overflow:hidden;transition:all 0.25s;cursor:default}
+.proj::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity 0.25s;z-index:0}
+.proj:hover{border-color:rgba(139,92,246,0.4);transform:translateY(-3px);box-shadow:0 20px 50px rgba(0,0,0,0.4)}
+.proj-inner{position:relative;z-index:1}
+.proj-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:0.75rem;gap:1rem}
+.proj-title{font-size:16px;font-weight:700;color:var(--white);letter-spacing:-0.01em}
+.proj-arr{width:30px;height:30px;flex-shrink:0;border-radius:8px;background:var(--b1);border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.proj:hover .proj-arr{background:var(--grad2);border-color:transparent}
+.proj-arr i{font-size:14px;color:var(--purple);transition:color 0.2s}
+.proj:hover .proj-arr i{color:#fff}
+.proj-desc{font-size:13px;color:var(--slate2);line-height:1.8;margin-bottom:1.25rem;font-weight:300}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+.p-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px;background:var(--b1);color:var(--purple2);border:1px solid var(--b2)}
+
+/* ── CERTS ── */
+.certs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:0}
+.cert{background:var(--surface);border:1px solid var(--b1);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:12px;transition:all 0.2s}
+.cert:hover{border-color:var(--b2);background:var(--surface2)}
+.cert-ico{width:40px;height:40px;background:var(--b1);border:1px solid var(--b2);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.cert-ico i{font-size:19px;color:var(--purple)}
+.cert-name{font-size:13px;font-weight:600;color:var(--white);line-height:1.35}
+.cert-org{font-size:11px;color:var(--slate);margin-top:3px}
+
+/* ── CONTACT ── */
+.contact-shell{background:var(--surface);border:1px solid var(--b2);border-radius:20px;overflow:hidden;position:relative}
+.contact-shell::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--grad)}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr}
+.contact-l{padding:3rem 3.5rem;border-right:1px solid var(--b1)}
+.contact-l h2{font-size:2rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem}
+.contact-l h2 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.contact-l p{font-size:14px;color:var(--slate2);line-height:1.85;font-weight:300;margin-bottom:2rem;max-width:360px}
+.contact-l-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:8px 16px}
+.contact-l-badge .dot{width:8px;height:8px;border-radius:50%;background:#34D399;animation:ping 1.5s ease-in-out infinite}
+.contact-l-badge span{font-size:12px;color:#34D399;font-weight:500}
+.contact-r{padding:3rem;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.cl{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--bg3);border:1px solid var(--b1);border-radius:12px;text-decoration:none;color:var(--slate3);font-size:13.5px;transition:all 0.25s;font-weight:400}
+.cl:hover{border-color:var(--b2);background:var(--b1);transform:translateX(6px)}
+.cl-ico{width:36px;height:36px;border-radius:9px;background:var(--b1);border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s}
+.cl:hover .cl-ico{background:var(--grad2);border-color:transparent}
+.cl-ico i{font-size:16px;color:var(--purple);transition:color 0.2s}
+.cl:hover .cl-ico i{color:#fff}
+.cl-body{flex:1}
+.cl-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--slate);letter-spacing:0.07em;display:block;margin-bottom:2px}
+.cl-val{color:var(--slate3);font-size:13px}
+.cl-arr{color:var(--slate);font-size:12px;transition:all 0.2s}
+.cl:hover .cl-arr{color:var(--purple2)}
+
+footer{text-align:center;padding:2.5rem;border-top:1px solid var(--b1);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);letter-spacing:0.07em}
+footer span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 1.5rem}
+  .hero{padding:6rem 1.5rem 3rem}
+  .hero-inner{grid-template-columns:1fr}
+  .hcard{display:none}
+  .sec{padding:3.5rem 1.5rem}
+  .about-grid,.skills-grid{grid-template-columns:1fr 1fr}
+  .exp-wrap{grid-template-columns:1fr}
+  .exp-sidebar{border-right:none;border-bottom:1px solid var(--b1);display:flex;overflow-x:auto}
+  .exp-tab{flex-shrink:0;border-left:none;border-bottom:2px solid transparent;white-space:nowrap}
+  .exp-tab.active{border-left-color:transparent;border-bottom-color:var(--purple)}
+  .exp-main{padding:2rem 1.5rem}
+  .proj-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-l{border-right:none;border-bottom:1px solid var(--b1);padding:2rem}
+  .contact-r{padding:2rem}
+  .achieve-grid{grid-template-columns:1fr}
+  h1.hero-name{font-size:3rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-brand" href="#">
+    <div class="nav-logo">SH</div>
+    <span class="nav-name">Syeda<span> </span>Husnaina</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact" class="nav-cta">Hire me</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-pill">
+        <div class="hero-pill-dot"><i class="ti ti-briefcase"></i></div>
+        <span>OPEN TO WORK · AVAILABLE IN ANY TIMEZONE</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="first">Syeda</span>
+        <span class="last">Husnaina</span>
+      </h1>
+      <div class="hero-role">Senior Software Quality Assurance Engineer</div>
+      <p class="hero-tagline">"Ensuring software quality through strategic testing of frontend and backend systems, seamless collaboration across any timezone, and exceptional user experiences."</p>
+      <div class="hero-btns">
+        <a class="btn-grad" href="mailto:syedahusnaina@gmail.com"><i class="ti ti-mail"></i> Contact me</a>
+        <a class="btn-outline" href="#experience"><i class="ti ti-briefcase"></i> Experience</a>
+        <a class="btn-outline" href="#projects"><i class="ti ti-folder"></i> Projects</a>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="hcard-top">
+        <div class="hcard-avatar">
+          <div class="hcard-initials">SH</div>
+          <div>
+            <div class="hcard-name">Syeda Husnaina</div>
+            <div class="hcard-sub">Senior SQA Engineer</div>
+          </div>
+        </div>
+      </div>
+      <div class="hcard-body">
+        <div class="hcard-row">
+          <span class="hcard-key"><i class="ti ti-calendar"></i> Experience</span>
+          <span class="hcard-val">5+ years</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key"><i class="ti ti-building"></i> Companies</span>
+          <span class="hcard-val">4 companies</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key"><i class="ti ti-device-mobile"></i> Platforms</span>
+          <span class="hcard-val">Web · iOS · Android</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key"><i class="ti ti-check"></i> Defect SLA</span>
+          <span class="hcard-val">95% on-time</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key"><i class="ti ti-users"></i> Leadership</span>
+          <span class="hcard-val">3 junior QAs</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key"><i class="ti ti-school"></i> Education</span>
+          <span class="hcard-val">MIT · MS SPM</span>
+        </div>
+        <div class="hcard-row">
+          <span class="hcard-key"><i class="ti ti-clock"></i> Timezone</span>
+          <span class="hcard-val">Any timezone</span>
+        </div>
+      </div>
+      <div class="hcard-footer">
+        <div class="avail-row">
+          <div class="avail-pulse"></div>
+          <span class="avail-text">Available for opportunities</span>
+          <span class="avail-badge-sm">OPEN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ METRICS ══ -->
+<div class="metrics-wrap">
+  <div class="metrics-inner">
+    <div class="metric"><span class="metric-num">5+</span><span class="metric-lbl">YEARS IN QA</span></div>
+    <div class="metric"><span class="metric-num">4</span><span class="metric-lbl">COMPANIES</span></div>
+    <div class="metric"><span class="metric-num">10+</span><span class="metric-lbl">PROJECTS TESTED</span></div>
+    <div class="metric"><span class="metric-num">95%</span><span class="metric-lbl">DEFECT RESOLUTION</span></div>
+    <div class="metric"><span class="metric-num">3</span><span class="metric-lbl">JUNIOR QAs MENTORED</span></div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<div id="about"></div>
+<section class="sec">
+  <div class="sec-hd"><span class="sec-num">01 &mdash;</span><h2>About me</h2><div class="sec-line"></div></div>
+  <div class="about-grid">
+    <div class="about-cell">
+      <div class="about-cell-icon"><i class="ti ti-user"></i></div>
+      <h3>Profile</h3>
+      <p>Senior SQA Engineer with 5+ years of experience in manual testing of Web, iOS, and Android applications. Covers full-stack quality — frontend UI validation and backend API/database testing — across any timezone.</p>
+    </div>
+    <div class="about-cell">
+      <div class="about-cell-icon"><i class="ti ti-bulb"></i></div>
+      <h3>Approach</h3>
+      <p>I bridge the gap between development and product — translating technical defects into clear, actionable reports that accelerate resolution and protect release timelines before they reach users.</p>
+    </div>
+    <div class="about-cell">
+      <div class="about-cell-icon"><i class="ti ti-world"></i></div>
+      <h3>Environment</h3>
+      <p>Available across any timezone — experienced in remote, onsite, and hybrid environments while collaborating with global cross-functional teams to deliver scalable, high-quality software solutions.</p>
+    </div>
+    <div class="about-cell">
+      <div class="about-cell-icon"><i class="ti ti-school"></i></div>
+      <h3>Education</h3>
+      <p>Master of Information Technology — Superior University Lahore (2022). Currently pursuing MS in Software Project Management at UMT, researching security testing integration in SQA.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ EXPERIENCE ══ -->
+<div id="experience"></div>
+<section class="sec">
+  <div class="sec-hd"><span class="sec-num">02 &mdash;</span><h2>Experience</h2><div class="sec-line"></div></div>
+  <div class="exp-wrap">
+    <div class="exp-sidebar" id="expList">
+      <div class="exp-tab active" onclick="sw(0)">
+        <div class="exp-tab-co">DG Cars UK</div>
+        <div class="exp-tab-date">AUG 2024 — PRESENT</div>
+      </div>
+      <div class="exp-tab" onclick="sw(1)">
+        <div class="exp-tab-co">Codeautomation.ai</div>
+        <div class="exp-tab-date">APR 2025 — SEP 2025</div>
+      </div>
+      <div class="exp-tab" onclick="sw(2)">
+        <div class="exp-tab-co">Devsinc</div>
+        <div class="exp-tab-date">APR 2021 — JUN 2024</div>
+      </div>
+      <div class="exp-tab" onclick="sw(3)">
+        <div class="exp-tab-co">Eccountant</div>
+        <div class="exp-tab-date">APR 2020 — MAR 2021</div>
+      </div>
+    </div>
+    <div class="exp-main">
+            <div class="exp-panel active" id="ep0">
+        <div class="exp-role-title">Senior QA Developer</div>
+        <div class="exp-co-tag"><i class="ti ti-building"></i> DG Cars UK &nbsp;·&nbsp; Aug 2024 – Present</div>
+        <p class="exp-desc">Mobile (iOS/Android) and web application testing with full Xray and Jira lifecycle management. API testing via Postman & Swagger, database validation using SQL, and direct stakeholder collaboration on test execution and reporting.</p>
+        <div class="achieve-grid">
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>20% improvement in defect detection</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>15% reduction in rework</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>18% backend reliability gain</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>95% on-time defect resolution</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>25% sprint QA coverage boost</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-users"></i></div><span>Managed 3 junior QA engineers</span></div>
+        </div>
+      </div>
+      <div class="exp-panel" id="ep1">
+        <div class="exp-role-title">Senior SQA Engineer</div>
+        <div class="exp-co-tag"><i class="ti ti-building"></i> Codeautomation.ai &nbsp;·&nbsp; Apr 2025 – Sep 2025</div>
+        <p class="exp-desc">Led QA processes for a UK automotive platform, managing 3 junior QA engineers while driving measurable quality improvements across sprint cycles and backend reliability.</p>
+        <div class="achieve-grid">
+          <div class="ach"><div class="ach-icon"><i class="ti ti-device-mobile"></i></div><span>iOS & Android mobile testing</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-world"></i></div><span>Web application testing</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-api"></i></div><span>API testing — Postman & Swagger</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-database"></i></div><span>SQL database validation</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-bug"></i></div><span>Xray + Jira lifecycle management</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-users"></i></div><span>Stakeholder collaboration</span></div>
+        </div>
+      </div>
+      <div class="exp-panel" id="ep2">
+        <div class="exp-role-title">SQA Engineer</div>
+        <div class="exp-co-tag"><i class="ti ti-building"></i> Devsinc &nbsp;·&nbsp; Apr 2021 – Jun 2024</div>
+        <p class="exp-desc">Full-cycle QA on multiple concurrent products. Improved testing processes across regression efficiency, UI consistency, and requirement clarity while mentoring junior engineers.</p>
+        <div class="achieve-grid">
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>25% reduction in missed defects</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>30% regression efficiency gain</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>15% UI consistency improvement</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>20% less requirement ambiguity</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-users"></i></div><span>Mentored junior QA engineers</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-checklist"></i></div><span>Multi-platform test coverage</span></div>
+        </div>
+      </div>
+      <div class="exp-panel" id="ep3">
+        <div class="exp-role-title">Associate SQA</div>
+        <div class="exp-co-tag"><i class="ti ti-building"></i> Eccountant &nbsp;·&nbsp; Apr 2020 – Mar 2021</div>
+        <p class="exp-desc">Started QA career testing a cloud ERP platform — established foundational QA processes and critical workflow coverage that significantly reduced production defects and improved sprint delivery.</p>
+        <div class="achieve-grid">
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>95% critical workflow pass rate</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>22% fewer production defects</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>18% faster bug resolution time</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-trending-up"></i></div><span>20% sprint delivery improvement</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-checklist"></i></div><span>TestRail + Jira management</span></div>
+          <div class="ach"><div class="ach-icon"><i class="ti ti-database"></i></div><span>SQL database validation</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ SKILLS ══ -->
+<div id="skills"></div>
+<section class="sec">
+  <div class="sec-hd"><span class="sec-num">03 &mdash;</span><h2>Skills &amp; Tools</h2><div class="sec-line"></div></div>
+  <div class="skills-grid">
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-checklist"></i></div><h3>Testing types</h3></div><div class="sk-tags"><span class="s-tag">Manual</span><span class="s-tag">Functional</span><span class="s-tag">Regression</span><span class="s-tag">Integration</span><span class="s-tag">Grey-box</span><span class="s-tag">UAT</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-api"></i></div><h3>API testing</h3></div><div class="sk-tags"><span class="s-tag">Postman</span><span class="s-tag">Swagger</span><span class="s-tag">REST Assured</span><span class="s-tag">curl</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-database"></i></div><h3>Databases</h3></div><div class="sk-tags"><span class="s-tag">SQL Server</span><span class="s-tag">MySQL</span><span class="s-tag">PostgreSQL</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-tools"></i></div><h3>Tools</h3></div><div class="sk-tags"><span class="s-tag">Jira</span><span class="s-tag">Xray</span><span class="s-tag">TestRail</span><span class="s-tag">Confluence</span><span class="s-tag">BrowserStack</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-refresh"></i></div><h3>Methodologies</h3></div><div class="sk-tags"><span class="s-tag">Agile</span><span class="s-tag">Scrum</span><span class="s-tag">Kanban</span><span class="s-tag">SDLC</span><span class="s-tag">STLC</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-device-mobile"></i></div><h3>Platforms</h3></div><div class="sk-tags"><span class="s-tag">Web</span><span class="s-tag">iOS</span><span class="s-tag">Android</span><span class="s-tag">Frontend</span><span class="s-tag">Backend</span><span class="s-tag">Cross-browser</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-flag"></i></div><h3>QA strategy</h3></div><div class="sk-tags"><span class="s-tag">Test Planning</span><span class="s-tag">Test Strategy</span><span class="s-tag">Defect Mgmt</span><span class="s-tag">Reporting</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-terminal-2"></i></div><h3>Automation</h3></div><div class="sk-tags"><span class="s-tag">Playwright</span><span class="s-tag">Allure</span><span class="s-tag">GitHub Actions</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-layout"></i></div><h3>Frontend testing</h3></div><div class="sk-tags"><span class="s-tag">UI Validation</span><span class="s-tag">Cross-browser</span><span class="s-tag">Responsive</span><span class="s-tag">UX flows</span><span class="s-tag">BrowserStack</span></div></div>
+    <div class="sk"><div class="sk-head"><div class="sk-ico"><i class="ti ti-server"></i></div><h3>Backend testing</h3></div><div class="sk-tags"><span class="s-tag">API testing</span><span class="s-tag">DB validation</span><span class="s-tag">Integration</span><span class="s-tag">Data integrity</span><span class="s-tag">SQL queries</span></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ PROJECTS ══ -->
+<div id="projects"></div>
+<section class="sec">
+  <div class="sec-hd"><span class="sec-num">04 &mdash;</span><h2>Projects</h2><div class="sec-line"></div></div>
+  <div class="proj-grid">
+    <div class="proj"><div class="proj-inner"><div class="proj-hd"><div class="proj-title">Eccountant ERP</div><div class="proj-arr"><i class="ti ti-arrow-up-right"></i></div></div><p class="proj-desc">Cloud ERP platform tested using TestRail and Jira. Validated critical paths covering accounting, reporting, and user access modules — achieved 95% critical workflow pass rate and 22% reduction in production defects.</p><div class="proj-tags"><span class="p-tag">Functional</span><span class="p-tag">Regression</span><span class="p-tag">TestRail</span><span class="p-tag">SQL</span><span class="p-tag">Jira</span></div></div></div>
+    <div class="proj"><div class="proj-inner"><div class="proj-hd"><div class="proj-title">Recurate</div><div class="proj-arr"><i class="ti ti-arrow-up-right"></i></div></div><p class="proj-desc">Implemented QA strategies to improve platform stability and seamless e-commerce integrations. Validated product listing flows, payment integrations, and resale workflows end-to-end.</p><div class="proj-tags"><span class="p-tag">Integration</span><span class="p-tag">API</span><span class="p-tag">E-commerce</span><span class="p-tag">UAT</span><span class="p-tag">Postman</span></div></div></div>
+    <div class="proj"><div class="proj-inner"><div class="proj-hd"><div class="proj-title">Infocabs</div><div class="proj-arr"><i class="ti ti-arrow-up-right"></i></div></div><p class="proj-desc">Dispatch and booking system focused on driver efficiency and route optimization. Tested real-time tracking, booking flows, and driver assignment logic across iOS and Android platforms.</p><div class="proj-tags"><span class="p-tag">Mobile</span><span class="p-tag">iOS</span><span class="p-tag">Android</span><span class="p-tag">Functional</span><span class="p-tag">Real-time</span></div></div></div>
+    <div class="proj"><div class="proj-inner"><div class="proj-hd"><div class="proj-title">VC Orchestrator (Ascend)</div><div class="proj-arr"><i class="ti ti-arrow-up-right"></i></div></div><p class="proj-desc">Healthcare communications SaaS. Covered SMS/pulse runner flows, QR inbound web forms, NPI validation, and security pen-test remediation with full PostgreSQL and API verification.</p><div class="proj-tags"><span class="p-tag">API</span><span class="p-tag">PostgreSQL</span><span class="p-tag">Security</span><span class="p-tag">Postman</span><span class="p-tag">Playwright</span></div></div></div>
+  </div>
+
+  <div class="sec-hd" style="margin-top:3.5rem"><span class="sec-num">05 &mdash;</span><h2>Certifications</h2><div class="sec-line"></div></div>
+  <div class="certs-grid">
+    <div class="cert"><div class="cert-ico"><i class="ti ti-certificate"></i></div><div><div class="cert-name">Postman API Fundamentals</div><div class="cert-org">Postman Academy</div></div></div>
+    <div class="cert"><div class="cert-ico"><i class="ti ti-certificate"></i></div><div><div class="cert-name">Google Cloud Arcade</div><div class="cert-org">Google Cloud</div></div></div>
+    <div class="cert"><div class="cert-ico"><i class="ti ti-certificate"></i></div><div><div class="cert-name">Test Automation University</div><div class="cert-org">Applitools</div></div></div>
+    <div class="cert"><div class="cert-ico"><i class="ti ti-hourglass"></i></div><div><div class="cert-name">ISTQB Foundation</div><div class="cert-org">In progress</div></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ CONTACT ══ -->
+<div id="contact"></div>
+<section class="sec">
+  <div class="sec-hd"><span class="sec-num">06 &mdash;</span><h2>Contact</h2><div class="sec-line"></div></div>
+  <div class="contact-shell">
+    <div class="contact-grid">
+      <div class="contact-l">
+        <h2>Let's work <span>together</span></h2>
+        <p>Open to senior QA roles, contract test engagements, and remote opportunities worldwide. Based in Lahore, Pakistan — available across any timezone for immediate start.</p>
+        <div class="contact-l-badge">
+          <div class="dot"></div>
+          <span>Available now · Any timezone · Worldwide</span>
+        </div>
+      </div>
+      <div class="contact-r">
+        <a class="cl" href="mailto:syedahusnaina@gmail.com">
+          <div class="cl-ico"><i class="ti ti-mail"></i></div>
+          <div class="cl-body"><span class="cl-lbl">EMAIL</span><span class="cl-val">syedahusnaina@gmail.com</span></div>
+          <span class="cl-arr">↗</span>
+        </a>
+        <a class="cl" href="tel:+923038768219">
+          <div class="cl-ico"><i class="ti ti-phone"></i></div>
+          <div class="cl-body"><span class="cl-lbl">PHONE</span><span class="cl-val">+92 303 876 8219</span></div>
+        </a>
+        <a class="cl" href="https://www.linkedin.com/in/syeda-husnaina" target="_blank">
+          <div class="cl-ico"><i class="ti ti-brand-linkedin"></i></div>
+          <div class="cl-body"><span class="cl-lbl">LINKEDIN</span><span class="cl-val">linkedin.com/in/syeda-husnaina</span></div>
+          <span class="cl-arr">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 &nbsp;·&nbsp; <span>SYEDA HUSNAINA</span> &nbsp;·&nbsp; SENIOR SQA ENGINEER &nbsp;·&nbsp; LAHORE, PK</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',scrollY>10)
+})
+function sw(i){
+  document.querySelectorAll('.exp-tab').forEach((t,j)=>t.classList.toggle('active',i===j))
+  for(let j=0;j<4;j++){
+    const p=document.getElementById('ep'+j)
+    if(p) p.classList.toggle('active',i===j)
+  }
+}
+</script>
+</body>
+</html>
